@@ -15,11 +15,11 @@
 	padding: 100px;
 	text-align: center;
 }
-a {
+main article a, main article a:visited {
 	color: #E5D4FF;
 }
 a:hover {
-	color: #BF95FF;
+	color: #FFF;
 }
 h1 {
 	font: bold 60px 'Open Sans Condensed', sans-serif;
