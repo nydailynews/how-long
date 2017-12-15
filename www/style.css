@@ -30,7 +30,7 @@ h2 {
 	overflow: hidden;
 	text-align: center;
 	text-transform: uppercase;
-	margin: auto;
+	margin: 0 auto 25px;
 	letter-spacing: 0.03em;
 }
 
@@ -52,17 +52,32 @@ h2:after {
 	margin-left: 0.75em;
 }
 
+ul {
+	margin: 15px auto;
+}
+
 li {
+	color: black;
 	font: normal 25px 'PT Serif', serif;
 	display: inline-block;
 	list-style-type: none;
-	padding: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
 	text-transform: uppercase;
 }
 
 li span {
 	display: block;
 	font-size: 4.5rem;
+}
+
+p {
+	width: 70%;
+	font: normal 20px 'PT Serif', serif;
+	line-height: 35px;
+	margin: 30px auto;
+	color: black;
+	text-align: left;
 }
 
 .center {
