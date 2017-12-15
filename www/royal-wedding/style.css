@@ -29,7 +29,7 @@ main article a:hover {
 }
 
 h1 {
-	font: bold 60px 'Open Sans Condensed', sans-serif;
+	font: bold 60px/48px 'Open Sans Condensed', sans-serif;
 	text-transform: uppercase;
 	color: white;
 }
@@ -100,4 +100,110 @@ p {
 	font-size: 10px;
 	color: #999;
 	font-family: sans-serif;
+}
+/* SHARE ICON CSS */
+a {
+    text-decoration: none;
+    color: #2569D3;
+}
+#ra-share-top {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.ra-share, .rt-share {
+    position: relative;
+}
+#ra-share-top li {
+    display: inline-block;
+}
+.ra-share li, .ra-share dd, .rt-share li, .rt-share dd {
+    color: white;
+    margin-right: 20px;
+	padding-left: 0;
+	padding-right: 0;
+}
+.ra-share-e a, .rt-share-e a,
+.ra-share-f a, .rt-share-f a,
+.ra-share-t a, .rt-share-t a {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+}
+.ra-share-f, .rt-share-f {
+    background: #2A6FBF;
+}
+.ra-share-t, .rt-share-t {
+    background: #40BEF1;
+}
+.ra-share-e, .rt-share-e {
+    background: #989898;
+}
+.ra-share-f:after, .rt-share-f:after {
+    content: "\e741";
+}
+.ra-share-t:after, .rt-share-t:after {
+    content: "\e74b";
+}
+.ra-share-e:after, .rt-share-e:after {
+    content: "\e75a";
+}
+.ra-share a, .rt-share a {
+    display: block;
+    font-size: 0;
+    height: 100%;
+    cursor: pointer;
+}
+.ra-share-f, .rt-share-f, .ra-share-t, .rt-share-t, .ra-share-e, .rt-share-e, .ra-share-p, .rt-share-p, .ra-share-i, .rt-share-i {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.ra-share li:after, .ra-share dd:after, .rt-share li:after, .rt-share dd:after {
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+.ra-share-f:after, .rt-share-f:after, .ra-share-t:after, .rt-share-t:after, .ra-share-e:after, .rt-share-e:after, .ra-share-p:after, .rt-share-p:after, .ra-share-i:after, .rt-share-i:after {
+    font: 16px "themify";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* HANDHELD */
+@media only screen and (min-width: 220px) and (max-width: 727px) and (orientation: portrait) {
+}
+@media only screen and (min-width: 220px) and (max-width: 360px) and (orientation: portrait) {
+}
+@media only screen and (min-width: 220px) and (max-width: 727px) and (orientation: landscape),
+(min-width: 728px) and (max-width: 989px) and (orientation: portrait) {
+}
+@media only screen and (max-width: 1024px) {
+	.container {
+		padding: 0;
+	}
+	p {
+		width: 95%;
+	}
+	p.latest-news {
+		line-height: 25px;
+	}
+	.container li {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+@media only screen and (max-width: 375px) {
+}
+@media only screen and (max-width: 325px) {
+}
+@media only screen and (min-width: 728px) and (max-width: 1025px) and (orientation: landscape) {
+}
+@media only screen and (min-width: 1500px) {
 }
