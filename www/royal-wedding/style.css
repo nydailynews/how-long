@@ -16,10 +16,11 @@
 	text-align: center;
 }
 main article a, main article a:visited {
-	color: #E5D4FF;
-}
-a:hover {
 	color: #FFF;
+	text-decoration: underline;
+}
+main article a:hover {
+	color: #333;
 }
 h1 {
 	font: bold 60px 'Open Sans Condensed', sans-serif;
