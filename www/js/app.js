@@ -5,8 +5,21 @@ const second = 1000,
 
 counts = {
     config: {
+		direction: 0, 	// 0 to count down, 1 to count up
     },
+	update_config: function(config) {
+        // Take an external config object and update this config object.
+        for ( var key in config )
+        {
+            if ( config.hasOwnProperty(key) )
+            {
+                this.config[key] = config[key];
+            }
+        }
+	},
     init: {
+        // Config handling. External config objects must be named c_config
+        if ( typeof c_config !== 'undefined' ) this.update_config(c_config);
     }
 };
 
