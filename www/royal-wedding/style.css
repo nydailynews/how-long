@@ -8,7 +8,7 @@
 	display: none;
 }
 
-.container {
+.counter {
 	background: #85D8CE;
 	background: linear-gradient(135deg, #085078, #85D8CE);
 	width: 100%;
@@ -62,6 +62,12 @@ h2:before {
 
 h2:after {
 	margin-left: 0.75em;
+}
+h3 {
+	font: normal 20px 'PT Serif', serif;
+    width: 70%;
+    text-align: left;
+    margin: 0 auto;
 }
 
 ul {
@@ -188,7 +194,7 @@ a {
 	.container {
 		padding: 50px 0 0 0;
 	}
-	p {
+	p, h3 {
 		width: 95%;
 	}
 	p.latest-news {
