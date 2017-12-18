@@ -97,6 +97,9 @@ p {
 	color: #333;
 	text-align: left;
 }
+#faq p {
+    margin-top: 0;
+}
 
 .center {
 	margin: auto;
