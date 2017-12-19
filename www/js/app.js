@@ -27,7 +27,7 @@ counts = {
 		let x = setInterval (function() {
 
 			let now = new Date().getTime(),
-			let distance = counts.target_time - now;
+                distance = counts.target_time - now;
 
 			document.getElementById('days').innerHTML = Math.floor(distance / (day)),
 			document.getElementById('hours').innerHTML = Math.floor((distance % (day)) / (hour)),
