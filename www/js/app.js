@@ -18,7 +18,7 @@ counts = {
             }
         }
 	},
-    init: {
+    init: function(target_time) {
         // Config handling. External config objects must be named c_config
         if ( typeof c_config !== 'undefined' ) this.update_config(c_config);
 		if ( typeof target_time !== 'undefined') this.config['target_time'] = target_time;
@@ -38,4 +38,4 @@ counts = {
     }
 };
 
-let countDown = new Date('May 19, 2018 00:00:00').getTime(),
+//let countDown = new Date('May 19, 2018 00:00:00').getTime(),
