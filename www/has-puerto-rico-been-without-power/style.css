@@ -32,7 +32,7 @@ main article a:hover {
 }
 
 h1 {
-	font: bold 60px/60px 'Open Sans Condensed', sans-serif;
+	font: bold 60px/48px 'Open Sans Condensed', sans-serif;
 	text-transform: uppercase;
 	color: white;
 }

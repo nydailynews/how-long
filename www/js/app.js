@@ -26,13 +26,16 @@ counts = {
 
 		let x = setInterval (function() {
 
-			let now = new Date().getTime(),
-                distance = counts.target_time - now;
+			let now = new Date().getTime();
+            // Count down
+            var distance = counts.target_time - now;
+            // Count up
+            if ( counts.config.direction === 1 ) distance = now - counts.target_time;
 
-			document.getElementById('days').innerHTML = Math.floor(distance / (day)),
-			document.getElementById('hours').innerHTML = Math.floor((distance % (day)) / (hour)),
-			document.getElementById('minutes').innerHTML = Math.floor((distance % (hour)) / (minute)),
-			document.getElementById('seconds').innerHTML = Math.floor((distance % (minute)) / second);
+			document.getElementById('days').innerHTML = Math.abs(Math.floor(distance / (day))),
+			document.getElementById('hours').innerHTML = Math.abs(Math.floor((distance % (day)) / (hour))),
+			document.getElementById('minutes').innerHTML = Math.abs(Math.floor((distance % (hour)) / (minute))),
+			document.getElementById('seconds').innerHTML = Math.abs(Math.floor((distance % (minute)) / second));
 
 		}, second)
     }
