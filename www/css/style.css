@@ -31,13 +31,13 @@ main article a:hover {
 	font-weight: normal;
 }
 
-h1 {
+article h1 {
 	font: bold 60px/60px 'Open Sans Condensed', sans-serif;
 	text-transform: uppercase;
 	color: white;
 }
 
-h2 {
+article h2 {
 	color: white;
 	position: relative;
 	font: normal 20px 'PT Serif', serif;
@@ -49,7 +49,7 @@ h2 {
 	letter-spacing: 0.03em;
 }
 
-h2:before, h2:after {
+article h2:before, article h2:after {
 	content: '';
 	width: 40px;
 	height: 3px;
@@ -59,25 +59,25 @@ h2:before, h2:after {
 	margin: auto;
 }
 
-h2:before {
+article h2:before {
 	margin-right: 0.75em;
 }
 
-h2:after {
+article h2:after {
 	margin-left: 0.75em;
 }
-h3 {
+article h3 {
 	font: normal 20px 'PT Serif', serif;
     width: 70%;
     text-align: left;
     margin: 0 auto;
 }
 
-ul {
+article ul {
 	margin: 15px auto;
 }
 
-li {
+article li {
 	color: #FFF;
 	font: normal 25px 'PT Serif', serif;
 	display: inline-block;
@@ -87,7 +87,7 @@ li {
 	text-transform: uppercase;
 }
 
-li span {
+article li span {
 	display: block;
 	font-size: 4.5rem;
 }
@@ -206,7 +206,7 @@ a {
     .counter ul {
         padding: 0 100px;
     }
-	p, h3 {
+	article p, article h3 {
 		width: 95%;
 	}
 	p.latest-news {
