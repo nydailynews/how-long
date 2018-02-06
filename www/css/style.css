@@ -37,7 +37,7 @@ article h1 {
 	color: white;
 }
 
-article h2 {
+article h2, article .dek {
 	color: white;
 	position: relative;
 	font: normal 20px 'PT Serif', serif;
@@ -49,7 +49,7 @@ article h2 {
 	letter-spacing: 0.03em;
 }
 
-article h2:before, article h2:after {
+article h2:before, article h2:after, article .dek:before, article .dek:after {
 	content: '';
 	width: 40px;
 	height: 3px;
@@ -59,11 +59,11 @@ article h2:before, article h2:after {
 	margin: auto;
 }
 
-article h2:before {
+article h2:before, article .dek:before {
 	margin-right: 0.75em;
 }
 
-article h2:after {
+article h2:after, article .dek:after {
 	margin-left: 0.75em;
 }
 article h3 {
