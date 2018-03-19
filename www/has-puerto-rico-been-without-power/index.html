@@ -131,11 +131,12 @@ main article a, main article a:visited {
             <section id="counter">
                 <h2>Puerto Rico</h2>
                 <h1>How long has Puerto Rico been without&nbsp;power?</h1>
-                <ul>
-                    <li><span id="days"></span> Days</li>
-                    <li><span id="hours"></span> Hours</li>
-                    <li><span id="minutes"></span> Minutes</li>
-                    <li><span id="seconds"></span> Seconds</li>
+                <ul id="time">
+                    <li id="d"><span id="days"></span> Days</li>
+                    <li id="h"><span id="hours"></span> Hours</li>
+                    <li id="m"><span id="minutes"></span> Minutes</li>
+                    <li id="s"><span id="seconds"></span> Seconds</li>
+                    <li id="mo"><span id="month-anniversary" class="hide"></span></li>
                 </ul>
 		<ul class="ra-share" id="ra-share-top">
 			<li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://interactive.nydailynews.com/project/how-long/has-puerto-rico-been-without-power/">facebook</a></li>
@@ -204,6 +205,8 @@ main article a, main article a:visited {
             }
         </script>
 		</div>
+        <script>
+        </script>
 		<script onload="counts.init('September 20, 2017 10:15:00');" src="../js/app.js"></script>
 	</article>
 </main>
