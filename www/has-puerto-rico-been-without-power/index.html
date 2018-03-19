@@ -150,7 +150,7 @@ main article a, main article a:visited {
 					Help Hurricane Maria Victims <br><a href="https://assets.pgs.io/button/v3/takeaction.html?partner_id=ny-daily-news&target_type=campaign&target_id=6b6cc55f-dfa6-4126-b11b-dcbc02ebbdf4" target="_blank"><img src="https://pgmapi.pgs.io/getpgmimage/getpgmbtn?partner_id=ny-daily-news&target_type=campaign&target_id=6b6cc55f-dfa6-4126-b11b-dcbc02ebbdf4"  height="50" width="212"></a>
 				</div>
                 <p>
-                How long has Puerto Rico been without full power? As of March 12, it’s 174 days and counting. When will power in Puerto Rico be restored? The Puerto Rican governor first said 95 percent of power would be restored by December, then said full power would be restored by February, and now it's March.
+                How long has Puerto Rico been without full power? As of March 19, it’s 181 days and counting. When will power in Puerto Rico be restored? The Puerto Rican governor first said 95 percent of power would be restored by December, then said full power would be restored by February, and now it's March.
                 </p>
                 <p>
                 <a href="http://www.nydailynews.com/news/world/explosion-puerto-rico-power-station-triggers-blackout-article-1.3815118">The explosion at a power substation in February didn't help</a>. As of February, government officials said there was no date for restoring 100 percent of power.
@@ -201,13 +201,13 @@ main article a, main article a:visited {
         <script>
             function update_twitter() {
                var a = document.getElementById('twitterlink');
-               a.setAttribute('href', 'https://twitter.com/intent/tweet?text=It has been ' + document.getElementById('days').innerHTML + ' days since Puerto Rico had full power.&amp;url=http://interactive.nydailynews.com/project/how-long/has-puerto-rico-been-without-power/&amp;via=NYDNi&amp;related=NYDNi,NYDailyNews');
+               var text = 'It has been ' + document.getElementById('days').innerHTML + ' days since Puerto Rico had full power.';
+               if ( counts.config.has_month_ann == 1 ) text = 'It has been ' + counts.month + ' months since Puerto Rico had full power.';
+               a.setAttribute('href', 'https://twitter.com/intent/tweet?text=' + text + '&amp;url=http://interactive.nydailynews.com/project/how-long/has-puerto-rico-been-without-power/&amp;via=NYDNi&amp;related=NYDNi,NYDailyNews');
             }
         </script>
 		</div>
-        <script>
-        </script>
-		<script onload="counts.init('September 20, 2017 10:15:00');" src="../js/app.js"></script>
+		<script onload="counts.init('September 20, 2017 10:15:00');" src="../js/app.js?v1"></script>
 	</article>
 </main>
 <!-- CONTENT-END -->

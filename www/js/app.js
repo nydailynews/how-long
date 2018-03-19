@@ -7,6 +7,8 @@ counts = {
 	target_time: null,
     config: {
 		direction: 0, 	// 0 to count down, 1 to count up
+        show_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
+        has_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
     },
     ap_numerals: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'],
 	update_config: function(config) {
@@ -35,6 +37,7 @@ counts = {
             var today = new Date();
             if ( target_date.getDate() == today.getDate() ) {
                 // We have a match. Calculate the months and hide the day / hour / minute / second.
+                this.config['has_month_ann'] = 1;
                 var months = ( today.getYear() - target_date.getYear() ) * 12 + ( today.getMonth() - target_date.getMonth() );
                 var month_str = months;
                 if ( months <= 10 ) month_str = this.ap_numerals[months];
@@ -43,6 +46,7 @@ counts = {
                 document.getElementById('m').parentNode.removeChild(document.getElementById('m'));
                 document.getElementById('s').parentNode.removeChild(document.getElementById('s'));
                 document.getElementById('h').parentNode.removeChild(document.getElementById('h'));
+                this.months = month_str;
                 return true;
             }
         }
