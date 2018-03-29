@@ -59,10 +59,19 @@ counts = {
             // Count up
             if ( counts.config.direction === 1 ) distance = now - counts.target_time;
 
-            document.getElementById('days').innerHTML = Math.abs(Math.floor(distance / (day))),
-            document.getElementById('hours').innerHTML = Math.abs(Math.floor((distance % (day)) / (hour))),
-            document.getElementById('minutes').innerHTML = Math.abs(Math.floor((distance % (hour)) / (minute))),
-            document.getElementById('seconds').innerHTML = Math.abs(Math.floor((distance % (minute)) / second));
+            if ( counts.config.direction !== 1 && distance < 0 ) {
+                // We're finished counting.
+                document.getElementById('days').innerHTML = 0;
+                document.getElementById('hours').innerHTML = 0;
+                document.getElementById('minutes').innerHTML = 0;
+                document.getElementById('seconds').innerHTML = 0;
+            }
+            else {
+                document.getElementById('days').innerHTML = Math.abs(Math.floor(distance / (day))),
+                document.getElementById('hours').innerHTML = Math.abs(Math.floor((distance % (day)) / (hour))),
+                document.getElementById('minutes').innerHTML = Math.abs(Math.floor((distance % (hour)) / (minute))),
+                document.getElementById('seconds').innerHTML = Math.abs(Math.floor((distance % (minute)) / second));
+            }
 
         }, second)
     }
