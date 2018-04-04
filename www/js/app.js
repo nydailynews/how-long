@@ -6,7 +6,7 @@ const second = 1000,
 counts = {
     target_time: null,
     config: {
-        direction: 0,   // 0 to count down, 1 to count up
+        direction: 0,   // 0 to count down to something, 1 to count up from something
         show_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
         has_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
     },
@@ -59,7 +59,8 @@ counts = {
             // Count up
             if ( counts.config.direction === 1 ) distance = now - counts.target_time;
 
-            if ( counts.config.direction !== 1 && distance < 0 ) {
+            // *** Figure out if we're counting down to something and that thing has already happened.
+            if ( counts.config.direction === 0 && distance < 0 ) {
                 // We're finished counting.
                 document.getElementById('days').innerHTML = 0;
                 document.getElementById('hours').innerHTML = 0;
@@ -67,10 +68,10 @@ counts = {
                 document.getElementById('seconds').innerHTML = 0;
             }
             else {
-                document.getElementById('days').innerHTML = Math.abs(Math.floor(distance / (day))),
-                document.getElementById('hours').innerHTML = Math.abs(Math.floor((distance % (day)) / (hour))),
-                document.getElementById('minutes').innerHTML = Math.abs(Math.floor((distance % (hour)) / (minute))),
-                document.getElementById('seconds').innerHTML = Math.abs(Math.floor((distance % (minute)) / second));
+                document.getElementById('days').innerHTML = Math.floor(Math.abs(distance / (day))),
+                document.getElementById('hours').innerHTML = Math.floor(Math.abs((distance % (day)) / (hour))),
+                document.getElementById('minutes').innerHTML = Math.floor(Math.abs((distance % (hour)) / (minute))),
+                document.getElementById('seconds').innerHTML = Math.floor(Math.abs((distance % (minute)) / second));
             }
 
         }, second)
