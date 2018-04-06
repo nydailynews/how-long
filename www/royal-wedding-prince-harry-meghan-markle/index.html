@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>When is the royal wedding? Royal Wedding countdown for Prince Harry and Meghan Markle - NY Daily News</title>
+	<title>When is the royal wedding? Royal Wedding countdown for Prince Harry and Meghan Markle</title>
 	<link rel="icon" type="image/png" href="http://interactive.nydailynews.com/favicons.png">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -116,6 +116,11 @@
             <section id="counter">
                 <h2>When is the royal wedding?</h2>
                 <h1>How long until the Royal Wedding?</h1>
+                <ul class="ra-share" id="ra-share-top">
+                    <li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://interactive.nydailynews.com/project/how-long/royal-wedding-prince-harry-meghan-markle/">facebook</a></li>
+                    <li class="ra-share-t"> <a id="twitterlink" onclick="update_twitter();" target="_blank" href="https://twitter.com/intent/tweet?text=How long until the royal wedding? Find out here&amp;url=http://interactive.nydailynews.com/project/how-long/royal-wedding-prince-harry-meghan-markle/&amp;via=NYDNi&amp;related=NYDNi,NYDailyNews">Tweet</a></li>
+                    <li class="ra-share-e"> <a href="mailto:?subject=When is the royal wedding?&amp;body=Keep track with the royal wedding countdown here http://interactive.nydailynews.com/project/how-long/royal-wedding-prince-harry-meghan-markle/">email</a> </li>
+                </ul>
                 <ul>
                     <li id="d"><span id="days"></span> Days</li>
                     <li id="h"><span id="hours"></span> Hours</li>
@@ -128,6 +133,10 @@
                 <p>The <a href="http://www.nydailynews.com/tags/royal-wedding-2018">royal wedding</a> ceremony will be in St. George's Chapel at Windsor Castle. Windsor, a 900-year-old castle located about 30 minutes west of London, has been described as being a "very special place" to Harry and Meghan, who have visited regularly during their year-and-a-half relationship.</p>
 
                 <p class="latest-news"><a href="http://www.nydailynews.com/tags/royal-wedding-2018">ROYAL WEDDING NEWS</a>: <strong id="latest-news-headline"></strong></p>
+                <figure>
+                    <img src="img/meghan-markle-prince-harry.jpg" alt="A photo of Meghan Markle and Prince Harry">
+                    <figcaption><span>We were going to be cutesy with this Meghan Markle photo caption but thought better of it.</span> (GETTY IMAGES)</figcaption>
+                </figure>
             </section> 
 
             <div class="ad center">
@@ -140,6 +149,8 @@
                 <h2>Royal Wedding FAQ</h2>
                 <h3>When is the royal wedding?</h3>
                 <p>The royal wedding is May 19, 2018.</p>
+                <h3>What time is the royal wedding?</h3>
+                <p>The wedding starts at noon Greenwich Mean Time, which is 7 a.m. on the East Coast.</p>
                 <h3>Where is the royal wedding?</h3>
                 <p>The royal wedding will be held in St. George's Chapel at Windsor Castle.</p>
                 <h3>How did Prince Harry propose?</h3>
@@ -151,7 +162,7 @@
                 <h3>Who is Prince Harry?</h3>
                 <p><a href="http://www.nydailynews.com/tags/prince-harry">Prince Harry Charles Albert David</a> is the younger son of <a href="http://www.nydailynews.com/tags/prince-charles">Prince Charles</a> and <a href="http://www.nydailynews.com/tags/princess-diana">Princess Diana</a>.</p>
 
-                <p>More Meghan Markle and Prince Harry:</p>
+                <p>More Meghan Markle and Prince Harry in these links below:</p>
                 <ul>
                     <li><a href="http://www.nydailynews.com/entertainment/meet-meghan-markle-prince-harry-rumored-girlfriend-gallery-1.2856929?pmSlide=1.3670244">PHOTOS: Meghan Markle</a></li>
                     <li><a href="http://www.nydailynews.com/entertainment/prince-harry-years-gallery-1.1940565">PHOTOS: Prince Harry</a></li>
@@ -160,25 +171,20 @@
                 </ul>
             </section>
 
-    <script>
-		var s = document.createElement('script');
-		var rando = function() { 
-			var text = "";
-			var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        <script>
+            var s = document.createElement('script');
+            var rando = function() { 
+                var text = "";
+                var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-			for( var i=0; i < 5; i++ )
-				text += possible.charAt(Math.floor(Math.random() * possible.length));
-			return text;
-		}
-        s.onload = function() { document.getElementById('latest-news-headline').innerHTML = hed; }
-		s.setAttribute('src', '//interactive.nydailynews.com/project/how-long/royal-wedding-prince-harry-meghan-markle/tag-royal-wedding-1.js?' + rando());
-		document.getElementsByTagName('head')[0].appendChild(s);
-	</script>
-		<ul class="ra-share" id="ra-share-top">
-			<li class="rt-share-f"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://interactive.nydailynews.com/project/how-long/royal-wedding-prince-harry-meghan-markle/">facebook</a></li>
-			<li class="ra-share-t"> <a id="twitterlink" onclick="update_twitter();" target="_blank" href="https://twitter.com/intent/tweet?text=How long until the royal wedding? Find out here&amp;url=http://interactive.nydailynews.com/project/how-long/royal-wedding-prince-harry-meghan-markle/&amp;via=NYDNi&amp;related=NYDNi,NYDailyNews">Tweet</a></li>
-			<li class="ra-share-e"> <a href="mailto:?subject=When is the royal wedding?&amp;body=Keep track with the royal wedding countdown here http://interactive.nydailynews.com/project/how-long/royal-wedding-prince-harry-meghan-markle/">email</a> </li>
-		</ul>
+                for( var i=0; i < 5; i++ )
+                    text += possible.charAt(Math.floor(Math.random() * possible.length));
+                return text;
+            }
+            s.onload = function() { document.getElementById('latest-news-headline').innerHTML = hed; }
+            s.setAttribute('src', '//interactive.nydailynews.com/project/how-long/royal-wedding-prince-harry-meghan-markle/tag-royal-wedding-1.js?' + rando());
+            document.getElementsByTagName('head')[0].appendChild(s);
+        </script>
         <script>
             function update_twitter() {
                 // Update the tweet text so people are tweeting exactly how long until the royal wedding

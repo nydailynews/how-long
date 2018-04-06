@@ -37,12 +37,12 @@ h1 {
 h2 {
 	color: #333;
 	position: relative;
-	font: normal 20px 'PT Serif', serif;
+	font: normal 30px 'PT Serif', serif;
 	z-index: 1;
 	overflow: hidden;
 	text-align: center;
 	text-transform: uppercase;
-	margin: 0 auto 25px;
+	margin: 20px auto 25px;
 	letter-spacing: 0.03em;
 }
 
@@ -96,6 +96,14 @@ p {
 	margin: 30px auto;
 	color: #333;
 	text-align: left;
+}
+article figure img {
+    width: 100%;
+}
+article figure figcaption {
+    font-size: 14px;
+    text-align: right;
+    margin-bottom: 10px;
 }
 #faq p {
     margin-top: 0;
@@ -187,6 +195,17 @@ a {
 
 /* HANDHELD */
 @media only screen and (min-width: 220px) and (max-width: 727px) and (orientation: portrait) {
+    p { line-height: 30px; }
+    h2 { line-height: 24px; }
+    h2:before, h2:after {
+        content: '';
+        width: 10px;
+        height: 3px;
+        display:inline-block;
+        background-color: #333;
+        vertical-align: 0.3em;
+        margin: auto;
+    }
 }
 @media only screen and (min-width: 220px) and (max-width: 360px) and (orientation: portrait) {
 }
