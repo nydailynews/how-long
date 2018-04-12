@@ -167,12 +167,10 @@
             }
         </script>
         <script>var c_config = { direction: 0 };</script>
-		<script onload="counts.init('March 29, 2018 13:10:00');" src="../js/app.js"></script>
+		<script onload="
+			counts.init('March 29, 2018 13:10:00');
+			latest_news('//interactive.nydailynews.com/feeds/tag-FEEDSLUG-1.js');" src="../js/app.js"></script>
 		<script>
-			var s = document.createElement('script');
-			s.onload = function() { document.getElementById('latest-news-headline').innerHTML = hed; }
-			s.setAttribute('src', '//interactive.nydailynews.com/feeds/tag-FEEDSLUG-1.js?' + utils.rando());
-			document.getElementsByTagName('head')[0].appendChild(s);
 		</script>
 	</article>
 </main>
