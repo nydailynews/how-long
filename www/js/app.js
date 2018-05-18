@@ -184,3 +184,8 @@ function latest_news(url) {
 	s.setAttribute('src', url + '?' + utils.rando());
 	document.getElementsByTagName('head')[0].appendChild(s);
 }
+
+//this is the number of years between royal wedding dates
+
+
+
