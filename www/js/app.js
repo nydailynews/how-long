@@ -67,10 +67,23 @@ counts = {
                 document.getElementById('seconds').innerHTML = 0;
             }
             else {
-                document.getElementById('days').innerHTML = Math.floor(Math.abs(distance / (day))),
-                document.getElementById('hours').innerHTML = Math.floor(Math.abs((distance % (day)) / (hour))),
-                document.getElementById('minutes').innerHTML = Math.floor(Math.abs((distance % (hour)) / (minute))),
-                document.getElementById('seconds').innerHTML = Math.floor(Math.abs((distance % (minute)) / second));
+                var totalDays = Math.floor(Math.abs(distance / (day)));
+                var totalHours = Math.floor(Math.abs((distance % (day)) / (hour)));
+                var totalMinutes = Math.floor(Math.abs((distance % (hour)) / (minute)));
+                var totalSeconds = Math.floor(Math.abs((distance % (minute)) / second));
+
+                document.getElementById('days').innerHTML = totalDays;
+                document.getElementById('daysLabel').innerHTML = totalDays == 1
+                    ? "day" : "days";
+                document.getElementById('hours').innerHTML = totalHours;
+                document.getElementById('hoursLabel').innerHTML = totalHours == 1
+                    ? "hour" : "hours";
+                document.getElementById('minutes').innerHTML = totalMinutes
+                document.getElementById('minutesLabel').innerHTML = totalMinutes == 1
+                    ? "minute" : "minutes";
+                document.getElementById('seconds').innerHTML = totalSeconds
+                document.getElementById('secondsLabel').innerHTML = totalSeconds == 1
+                    ? "second" : "seconds";
             }
 
         }, second)
