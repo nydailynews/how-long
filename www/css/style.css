@@ -19,6 +19,7 @@
 main article a, main article a:visited {
     color: #F00;
 }
+
 #counter li {
 	color: #FFF;
 }
@@ -40,12 +41,12 @@ article h1 {
 article h2, article .dek {
 	color: white;
 	position: relative;
-	font: normal 20px 'PT Serif', serif;
+	font: normal 30px 'PT Serif', serif;
 	z-index: 1;
 	overflow: hidden;
 	text-align: center;
 	text-transform: uppercase;
-	margin: 0 auto 25px;
+	margin: 20px auto 25px;
 	letter-spacing: 0.03em;
 }
 
@@ -67,7 +68,7 @@ article h2:after, article .dek:after {
 	margin-left: 0.75em;
 }
 article h3 {
-	font: normal 20px 'PT Serif', serif;
+	font: bold 20px 'Open Sans Condensed', sans-serif;
     width: 70%;
     text-align: left;
     margin: 0 auto;
@@ -87,7 +88,16 @@ article li {
 	text-transform: uppercase;
 }
 
-article li span {
+article p a:hover, article li a:hover {
+	color: #333;
+}
+
+/*article li span {
+	display: block;
+	font-size: 4.5rem;
+}*/
+
+article li span.bigNumber {
 	display: block;
 	font-size: 4.5rem;
 }
@@ -101,8 +111,10 @@ article p {
 	text-align: left;
 }
 article figure img {
-    width: 100%;
+    width: 75%;
+    margin-bottom: 30px;
 }
+
 #faq p {
     margin-top: 0;
 }
