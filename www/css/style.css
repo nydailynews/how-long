@@ -12,12 +12,8 @@
 	background: #800000;
 	background: linear-gradient(358deg, #000, #800000);
 	width: 100%;
-	padding: 100px;
+	padding: 50px;
 	text-align: center;
-}
-
-main article a, main article a:visited {
-    color: #F00;
 }
 
 #counter li {
