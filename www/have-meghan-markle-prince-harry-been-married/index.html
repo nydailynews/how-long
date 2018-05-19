@@ -128,7 +128,7 @@ main article a, main article a:visited {
         
 		<div class="counter">
             <section id="counter">
-                <h2>The Royal Wedding</h2>
+                <p class="dek">The Royal Wedding</p>
                <!-- PUT AN IMAGE FROM THE WEDDING HERE WHEN WE HAVE IT <figure><img src="http://via.placeholder.com/800x600" alt="a picture of Prince Harry and Meghan Markle on their wedding day"></figure> -->
                 <h1>How long have Harry &amp; Meghan been married?</h1>
                 <ul id="time">
@@ -143,7 +143,9 @@ main article a, main article a:visited {
 			<li class="ra-share-t"> <a id="twitterlink" onclick="update_twitter();" target="_blank" href="https://twitter.com/intent/tweet?text= &amp;url=http://interactive.nydailynews.com/project/how-long/have-meghan-markle-prince-harry-been-married/&amp;via=NYDNi&amp;related=NYDNi,NYDailyNews">Tweet</a></li>
 			<li class="ra-share-e"> <a href="mailto:?subject=How long have Harry &amp; Meghan been married&amp;body=http://interactive.nydailynews.com/project/how-long/have-meghan-markle-prince-harry-been-married/">email</a> </li>
 		</ul>
-                <p>The festivities were paid for by the royal family. A few over-zealous publications dubbed it the wedding of the century. Others took issue with the fact that it was held on a Saturday when tradition dictates royal weddings usually happen on a weekday. With the parties over, it's time to start keeping track of how long this union will last.</p>
+                <p>
+                    The festivities were paid for by the royal family. A few overzealous publications dubbed it the wedding of the century. Others took issue with the fact that it was held on a Saturday when tradition dictates royal weddings usually happen on a weekday. With the parties over, it's time to start keeping track of how long this union will last.
+                </p>
             </section>
             
             <section id="faq">
@@ -186,15 +188,10 @@ main article a, main article a:visited {
                 text += possible.charAt(Math.floor(Math.random() * possible.length));
             return text;
         }
-        s.onload = function() { document.getElementById('latest-news-headline').innerHTML = hed; }
+        //s.onload = function() { document.getElementById('latest-news-headline').innerHTML = hed; }
         s.setAttribute('src', '//interactive.nydailynews.com/project/how-long/have-meghan-markle-prince-harry-been-married/tag-puerto-rico-1.js?' + rando());
         document.getElementsByTagName('head')[0].appendChild(s);
     </script>
-                <!--
-                <p>
-                As of today, 65.4 percent of the island’s power-generating capacity has been restored and 86.36 percent has water (note that the numbers in this sentence are updated each day).
-                </p>
-                -->
 
             <div class="ad center">
                 <div id='div-gpt-ad-1423507761396-4'>
@@ -206,14 +203,14 @@ main article a, main article a:visited {
             function update_twitter() {
                var a = document.getElementById('twitterlink');
                var text;
-               if ( counts.config.has_month_ann == 1 ) text = 'It has been exactly ' + counts.months + ' months since Puerto Rico had full power.';
-               else text = 'It has been ' + document.getElementById('days').innerHTML + ' days since Puerto Rico had full power.';
+               if ( counts.config.has_month_ann == 1 ) text = 'It has been exactly ' + counts.months + ' months since Prince Harry and Meghan Markle got married.';
+               else text = 'It has been ' + document.getElementById('days').innerHTML + ' days since Prince Harry and Meghan Markle got married.';
                a.setAttribute('href', 'https://twitter.com/intent/tweet?text=' + text + '&amp;url=http://interactive.nydailynews.com/project/how-long/have-meghan-markle-prince-harry-been-married/&amp;via=NYDNi&amp;related=NYDNi,NYDailyNews');
             }
         </script>
 		</div>
         <script>var c_config = { direction: 1 };</script>
-        <script onload="counts.init('May 19, 2018 8:00:00');" src="../js/app.js?v2"></script>
+        <script onload="counts.init('May 19, 2018 8:00:00');" src="../js/app.js?v3"></script>
 	</article>
 </main>
 <!-- CONTENT-END -->

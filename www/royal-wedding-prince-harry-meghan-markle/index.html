@@ -121,10 +121,10 @@
                     <li class="ra-share-e"> <a href="mailto:?subject=When is the royal wedding?&amp;body=Keep track with the royal wedding countdown here http://interactive.nydailynews.com/project/how-long/royal-wedding-prince-harry-meghan-markle/">email</a> </li>
                 </ul>
                 <ul id="time">
-                    <li id="d"><span class="bigNumber" id="days"></span> <mark id='daysLabel'>Days</mark></li>
-                    <li id="h"><span class="bigNumber" id="hours"></span> <mark id='hoursLabel'>Hours</mark></li>
-                    <li id="m"><span class="bigNumber" id="minutes"></span> <mark id='minutesLabel'>Minutes</mark></li>
-                    <li id="s"><span class="bigNumber" id="seconds"></span> <mark id='secondsLabel'>Seconds</mark></li>
+                    <li id="d"><span class="bigNumber" id="days">0</span> <mark id='daysLabel'>Days</mark></li>
+                    <li id="h"><span class="bigNumber" id="hours">0</span> <mark id='hoursLabel'>Hours</mark></li>
+                    <li id="m"><span class="bigNumber" id="minutes">0</span> <mark id='minutesLabel'>Minutes</mark></li>
+                    <li id="s"><span class="bigNumber" id="seconds">0</span> <mark id='secondsLabel'>Seconds</mark></li>
                     <li id="mo"><span class="bigNumber" id="month-anniversary"></span></li>
                 </ul>
                 <p><strong>Get your hats ready!</strong> Kensington Palace announced <a href="http://www.nydailynews.com/tags/prince-harry">Prince Harry</a> and <a href="http://interactive.nydailynews.com/meghan-markle-profile/">Meghan Markle</a> will be married on <em>{cue heralding trumpets}</em> <a href="http://www.nydailynews.com/entertainment/gossip/prince-harry-meghan-markle-announce-wedding-date-article-1.3699622">&nbsp;MAY 19, 2018.</a></p> 
@@ -136,7 +136,7 @@
 
                 <p>The <a href="http://www.nydailynews.com/tags/royal-wedding-2018">royal wedding</a> ceremony will be in St. George's Chapel at Windsor Castle. Windsor, a 900-year-old castle located about 30 minutes west of London, has been described as being a "very special place" to Harry and Meghan, who have visited regularly during their year-and-a-half relationship.</p>
 
-                <p class="latest-news"><a href="http://www.nydailynews.com/tags/royal-wedding-2018">ROYAL WEDDING NEWS</a>: <strong id="hard-latest-news-headline"></strong></p>
+                <p class="latest-news"><a href="http://www.nydailynews.com/tags/royal-wedding-2018">ROYAL WEDDING NEWS</a>: <strong id="hard-latest-news-headline"><a href="http://www.nydailynews.com/news/prince-harry-meghan-markle-wed-windsor-castle-gallery-1.3998249">Prince Harry and Meghan Markle get married</a></strong></p>
                 <figure>
                     <img src="img/meghan-markle-prince-harry.jpg" alt="A photo of Meghan Markle and Prince Harry">
                     <figcaption><span>We were going to be cutesy with this Meghan Markle photo caption but thought better of it.</span> (GETTY IMAGES)</figcaption>
@@ -185,7 +185,7 @@
                     text += possible.charAt(Math.floor(Math.random() * possible.length));
                 return text;
             }
-            s.onload = function() { document.getElementById('latest-news-headline').innerHTML = hed; }
+            //s.onload = function() { document.getElementById('latest-news-headline').innerHTML = hed; }
             s.setAttribute('src', '//interactive.nydailynews.com/project/how-long/royal-wedding-prince-harry-meghan-markle/tag-royal-wedding-1.js?' + rando());
             document.getElementsByTagName('head')[0].appendChild(s);
         </script>
@@ -198,7 +198,9 @@
         </script>
 		</div>
         <script>var c_config = { direction: 0 };</script>
-		<script src="countdown.js?v1"></script>
+        <!--
+		<script src="../js/app.js"></script>
+        -->
 	</article>
 </main>
 <!-- CONTENT-END -->

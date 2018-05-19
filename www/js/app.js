@@ -34,10 +34,10 @@ counts = {
             this.config['show_month_ann'] = 1;
             var target_date = new Date(this.config['target_time']);
             var today = new Date();
-            if ( target_date.getDate() == today.getDate() ) {
+            var months = ( today.getYear() - target_date.getYear() ) * 12 + ( today.getMonth() - target_date.getMonth() );
+            if ( target_date.getDate() == today.getDate() && months !== 0 ) {
                 // We have a match. Calculate the months and hide the day / hour / minute / second.
                 this.config['has_month_ann'] = 1;
-                var months = ( today.getYear() - target_date.getYear() ) * 12 + ( today.getMonth() - target_date.getMonth() );
                 var month_str = months;
                 if ( months <= 10 ) month_str = utils.ap_numerals[months];
                 document.getElementById('month-anniversary').textContent = month_str + " months";
