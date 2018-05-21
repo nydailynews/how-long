@@ -177,15 +177,11 @@ var utils = {
         document.getElementsByTagName('head')[0].appendChild(s);
     },
 }
+
 function latest_news(url) {
-	// Add the latest news headline to the latest-news-headline element.
-	var s = document.createElement('script');
-	s.onload = function() { document.getElementById('latest-news-headline').innerHTML = hed; }
-	s.setAttribute('src', url + '?' + utils.rando());
-	document.getElementsByTagName('head')[0].appendChild(s);
+    // Add the latest news headline to the latest-news-headline element.
+    var s = document.createElement('script');
+    s.onload = function() { document.getElementById('latest-news-headline').innerHTML = hed; }
+    s.setAttribute('src', url + '?' + utils.rando());
+    document.getElementsByTagName('head')[0].appendChild(s);
 }
-
-//this is the number of years between royal wedding dates
-
-
-
