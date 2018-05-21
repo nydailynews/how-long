@@ -9,6 +9,7 @@ counts = {
         direction: 0,   // 0 to count down to something, 1 to count up from something
         show_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
         has_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
+        id: '', // Set the parent ID for a counts object. Not in operation yet.
     },
     update_config: function(config) {
         // Take an external config object and update this config object.
@@ -73,16 +74,16 @@ counts = {
                 var totalSeconds = Math.floor(Math.abs((distance % (minute)) / second));
 
                 document.getElementById('days').innerHTML = totalDays;
-                document.getElementById('daysLabel').innerHTML = totalDays == 1
+                document.getElementById('days-label').innerHTML = totalDays == 1
                     ? "day" : "days";
                 document.getElementById('hours').innerHTML = totalHours;
-                document.getElementById('hoursLabel').innerHTML = totalHours == 1
+                document.getElementById('hours-label').innerHTML = totalHours == 1
                     ? "hour" : "hours";
                 document.getElementById('minutes').innerHTML = totalMinutes
-                document.getElementById('minutesLabel').innerHTML = totalMinutes == 1
+                document.getElementById('minutes-label').innerHTML = totalMinutes == 1
                     ? "minute" : "minutes";
                 document.getElementById('seconds').innerHTML = totalSeconds
-                document.getElementById('secondsLabel').innerHTML = totalSeconds == 1
+                document.getElementById('seconds-label').innerHTML = totalSeconds == 1
                     ? "second" : "seconds";
             }
 
@@ -90,7 +91,6 @@ counts = {
     }
 };
 
-//let countDown = new Date('May 19, 2018 00:00:00').getTime(),
 // UTILS
 var utils = {
     ap_numerals: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'],

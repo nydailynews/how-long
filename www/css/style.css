@@ -98,6 +98,12 @@ article li span.bigNumber {
 	font-size: 4.5rem;
 }
 
+mark {
+    background-color: transparent;
+    font-style: normal;
+    font-weight: normal;
+}
+
 article p {
 	width: 70%;
 	font: normal 20px 'PT Serif', serif;
