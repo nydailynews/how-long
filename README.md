@@ -19,6 +19,9 @@ Clocks to keep track of elapsed time or countdown until something happens.
         1. UNTILWHAT _flesh out the twitter text_
         1. AUTHOR
         1. PARSELY-KEYWORDS
+        1. SECTION
 1. You'll also have to change the date that's hard-coded, `March 29, 2018 13:10:00`, to whatever the date and time is you're counting too.
+1. Change the Parsely date `2018-02-05T06:00:00Z` to the expected launch date and time.
 1. On the line below the `POINT TO THE RIGHT SECTION` section, update the link and the text to point to the right section.
 1. On the line with `FEEDSLUG` in it, figure out how to get a new article feed up in there.
+
