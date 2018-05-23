@@ -10,6 +10,7 @@ var counts = {
         show_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
         has_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
         id: '', // Set the parent ID for a counts object. Not in operation yet.
+        only: [],   // Add items to the array in case we only want to publish days / hours / minutes / seconds / months / years.
     },
     update_config: function(config) {
         // Take an external config object and update this config object.
@@ -76,18 +77,26 @@ var counts = {
                 var totalMinutes = Math.floor(Math.abs((distance % (hour)) / (minute)));
                 var totalSeconds = Math.floor(Math.abs((distance % (minute)) / second));
 
-                document.getElementById('days').innerHTML = totalDays;
-                document.getElementById('days-label').innerHTML = totalDays == 1
-                    ? "day" : "days";
-                document.getElementById('hours').innerHTML = totalHours;
-                document.getElementById('hours-label').innerHTML = totalHours == 1
-                    ? "hour" : "hours";
-                document.getElementById('minutes').innerHTML = totalMinutes
-                document.getElementById('minutes-label').innerHTML = totalMinutes == 1
-                    ? "minute" : "minutes";
-                document.getElementById('seconds').innerHTML = totalSeconds
-                document.getElementById('seconds-label').innerHTML = totalSeconds == 1
-                    ? "second" : "seconds";
+                if ( document.getElementById('days') !== null ) {
+                    document.getElementById('days').innerHTML = totalDays;
+                    document.getElementById('days-label').innerHTML = totalDays == 1
+                        ? "day" : "days";
+                }
+                if ( document.getElementById('hours') !== null ) {
+                    document.getElementById('hours').innerHTML = totalHours;
+                    document.getElementById('hours-label').innerHTML = totalHours == 1
+                        ? "hour" : "hours";
+                }
+                if ( document.getElementById('minutes') !== null ) {
+                    document.getElementById('minutes').innerHTML = totalMinutes
+                    document.getElementById('minutes-label').innerHTML = totalMinutes == 1
+                        ? "minute" : "minutes";
+                }
+                if ( document.getElementById('seconds') !== null ) {
+                    document.getElementById('seconds').innerHTML = totalSeconds
+                    document.getElementById('seconds-label').innerHTML = totalSeconds == 1
+                        ? "second" : "seconds";
+                }
             }
 
         }, second)
