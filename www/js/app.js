@@ -3,7 +3,7 @@ const second = 1000,
     hour = minute * 60,
     day = hour * 24;
 
-counts = {
+var counts = {
     target_time: null,
     config: {
         direction: 0,   // 0 to count down to something, 1 to count up from something
@@ -36,6 +36,8 @@ counts = {
             var target_date = new Date(this.config['target_time']);
             var today = new Date();
             var months = ( today.getYear() - target_date.getYear() ) * 12 + ( today.getMonth() - target_date.getMonth() );
+            
+            // IF WE'RE ON A month anniversary we update the counter and exit the init() function.
             if ( target_date.getDate() == today.getDate() && months !== 0 ) {
                 // We have a match. Calculate the months and hide the day / hour / minute / second.
                 this.config['has_month_ann'] = 1;
@@ -47,6 +49,7 @@ counts = {
                 document.getElementById('s').parentNode.removeChild(document.getElementById('s'));
                 document.getElementById('h').parentNode.removeChild(document.getElementById('h'));
                 this.months = month_str;
+                // HERE IS WHERE WE GTFO
                 return true;
             }
         }
@@ -176,7 +179,7 @@ var utils = {
         s.setAttribute('src', src);
         document.getElementsByTagName('head')[0].appendChild(s);
     },
-}
+};
 
 function latest_news(url) {
     // Add the latest news headline to the latest-news-headline element.
