@@ -7,6 +7,7 @@ const second = 1000,
 var counts = {
     target_time: null,
     config: {
+        el: '', // The id of the element
         direction: 0,   // 0 to count down to something, 1 to count up from something
         show_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
         has_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
@@ -74,6 +75,7 @@ var counts = {
                 document.getElementById('seconds').innerHTML = 0;
             }
             else {
+                // *** TODO: If we're not publishing one of these fields we shouldn't be tabulating it either.
                 var total_years = Math.floor(Math.abs(distance / (year)));
                 var total_days = Math.floor(Math.abs((distance % (year)) / (day)));
                 var total_hours = Math.floor(Math.abs((distance % (day)) / (hour)));
