@@ -2,7 +2,8 @@ const second = 1000,
     minute = second * 60,
     hour = minute * 60,
     day = hour * 24,
-    year = day * 365;
+    year = day * 365,
+    month = year / 12;
 
 var counts = {
     target_time: null,
@@ -58,6 +59,7 @@ var counts = {
             }
         }
 
+        // THIS IS WHERE THE ACTION IS
         let x = setInterval (function() {
 
             let now = new Date().getTime();
