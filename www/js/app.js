@@ -1,7 +1,8 @@
 const second = 1000,
     minute = second * 60,
     hour = minute * 60,
-    day = hour * 24;
+    day = hour * 24,
+    year = day * 365;
 
 var counts = {
     target_time: null,
@@ -45,10 +46,11 @@ var counts = {
                 var month_str = months;
                 if ( months <= 10 ) month_str = utils.ap_numerals[months];
                 document.getElementById('month-anniversary').textContent = month_str + " months";
-                document.getElementById('d').parentNode.removeChild(document.getElementById('d'));
-                document.getElementById('m').parentNode.removeChild(document.getElementById('m'));
-                document.getElementById('s').parentNode.removeChild(document.getElementById('s'));
-                document.getElementById('h').parentNode.removeChild(document.getElementById('h'));
+                if ( document.getElementById('y') !== null ) document.getElementById('y').parentNode.removeChild(document.getElementById('y'));
+                if ( document.getElementById('d') !== null ) document.getElementById('d').parentNode.removeChild(document.getElementById('d'));
+                if ( document.getElementById('h') !== null ) document.getElementById('h').parentNode.removeChild(document.getElementById('h'));
+                if ( document.getElementById('m') !== null ) document.getElementById('m').parentNode.removeChild(document.getElementById('m'));
+                if ( document.getElementById('s') !== null ) document.getElementById('s').parentNode.removeChild(document.getElementById('s'));
                 this.months = month_str;
                 // HERE IS WHERE WE GTFO
                 return true;
@@ -72,11 +74,17 @@ var counts = {
                 document.getElementById('seconds').innerHTML = 0;
             }
             else {
-                var totalDays = Math.floor(Math.abs(distance / (day)));
+                var totalYears = Math.floor(Math.abs(distance / (year)));
+                var totalDays = Math.floor(Math.abs((distance % (year)) / (day)));
                 var totalHours = Math.floor(Math.abs((distance % (day)) / (hour)));
                 var totalMinutes = Math.floor(Math.abs((distance % (hour)) / (minute)));
                 var totalSeconds = Math.floor(Math.abs((distance % (minute)) / second));
 
+                if ( document.getElementById('years') !== null ) {
+                    document.getElementById('years').innerHTML = totalDays;
+                    document.getElementById('years-label').innerHTML = totalDays == 1
+                        ? "year" : "years";
+                }
                 if ( document.getElementById('days') !== null ) {
                     document.getElementById('days').innerHTML = totalDays;
                     document.getElementById('days-label').innerHTML = totalDays == 1
@@ -99,7 +107,7 @@ var counts = {
                 }
             }
 
-        }, second)
+        }, second);
     }
 };
 
