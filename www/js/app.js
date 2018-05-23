@@ -74,35 +74,35 @@ var counts = {
                 document.getElementById('seconds').innerHTML = 0;
             }
             else {
-                var totalYears = Math.floor(Math.abs(distance / (year)));
-                var totalDays = Math.floor(Math.abs((distance % (year)) / (day)));
-                var totalHours = Math.floor(Math.abs((distance % (day)) / (hour)));
-                var totalMinutes = Math.floor(Math.abs((distance % (hour)) / (minute)));
-                var totalSeconds = Math.floor(Math.abs((distance % (minute)) / second));
+                var total_years = Math.floor(Math.abs(distance / (year)));
+                var total_days = Math.floor(Math.abs((distance % (year)) / (day)));
+                var total_hours = Math.floor(Math.abs((distance % (day)) / (hour)));
+                var total_minutes = Math.floor(Math.abs((distance % (hour)) / (minute)));
+                var total_seconds = Math.floor(Math.abs((distance % (minute)) / second));
 
                 if ( document.getElementById('years') !== null ) {
-                    document.getElementById('years').innerHTML = totalDays;
-                    document.getElementById('years-label').innerHTML = totalDays == 1
+                    document.getElementById('years').innerHTML = total_days;
+                    document.getElementById('years-label').innerHTML = total_days == 1
                         ? "year" : "years";
                 }
                 if ( document.getElementById('days') !== null ) {
-                    document.getElementById('days').innerHTML = totalDays;
-                    document.getElementById('days-label').innerHTML = totalDays == 1
+                    document.getElementById('days').innerHTML = total_days;
+                    document.getElementById('days-label').innerHTML = total_days == 1
                         ? "day" : "days";
                 }
                 if ( document.getElementById('hours') !== null ) {
-                    document.getElementById('hours').innerHTML = totalHours;
-                    document.getElementById('hours-label').innerHTML = totalHours == 1
+                    document.getElementById('hours').innerHTML = total_hours;
+                    document.getElementById('hours-label').innerHTML = total_hours == 1
                         ? "hour" : "hours";
                 }
                 if ( document.getElementById('minutes') !== null ) {
-                    document.getElementById('minutes').innerHTML = totalMinutes
-                    document.getElementById('minutes-label').innerHTML = totalMinutes == 1
+                    document.getElementById('minutes').innerHTML = total_minutes
+                    document.getElementById('minutes-label').innerHTML = total_minutes == 1
                         ? "minute" : "minutes";
                 }
                 if ( document.getElementById('seconds') !== null ) {
-                    document.getElementById('seconds').innerHTML = totalSeconds
-                    document.getElementById('seconds-label').innerHTML = totalSeconds == 1
+                    document.getElementById('seconds').innerHTML = total_seconds
+                    document.getElementById('seconds-label').innerHTML = total_seconds == 1
                         ? "second" : "seconds";
                 }
             }
