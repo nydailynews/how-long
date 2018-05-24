@@ -13,7 +13,6 @@ var counts = {
         show_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
         has_month_ann: 0,  // Configured by the script on the month anniversaries of the date we're tracking
         id: '', // Set the parent ID for a counts object. Not in operation yet.
-        only: [],   // Add items to the array in case we only want to publish days / hours / minutes / seconds / months / years.
     },
     update_config: function(config) {
         // Take an external config object and update this config object.
@@ -25,6 +24,7 @@ var counts = {
             }
         }
     },
+    fields: [],   // Items in this array are the ones we're publishing the countdown on.
     month_display: function() {
         // On the exactly-one-month anniversaries, change the display.
         
@@ -35,6 +35,15 @@ var counts = {
         if ( typeof target_time !== 'undefined') this.config['target_time'] = target_time;
         this.target_time = new Date(this.config['target_time']).getTime();
 
+        // Some of this object's behavior is configured explicitly,
+        // other behavior is configured via adding / removing elements with particular IDs on them.
+        // Should probably document which is which. ***
+        if ( document.getElementById('y') !== null ) this.fields.push('y');
+        if ( document.getElementById('mo') !== null && document.getElementById('month-anniversary') == null ) this.fields.push('mo');
+        if ( document.getElementById('d') !== null ) this.fields.push('d');
+        if ( document.getElementById('h') !== null ) this.fields.push('h');
+        if ( document.getElementById('m') !== null ) this.fields.push('m');
+        if ( document.getElementById('s') !== null ) this.fields.push('s');
         if ( document.getElementById('month-anniversary') !== null ) {
             this.config['show_month_ann'] = 1;
             var target_date = new Date(this.config['target_time']);
@@ -78,11 +87,26 @@ var counts = {
             }
             else {
                 // *** TODO: If we're not publishing one of these fields we shouldn't be tabulating it either.
-                var total_years = Math.floor(Math.abs(distance / (year)));
-                var total_days = Math.floor(Math.abs((distance % (year)) / (day)));
-                var total_hours = Math.floor(Math.abs((distance % (day)) / (hour)));
-                var total_minutes = Math.floor(Math.abs((distance % (hour)) / (minute)));
-                var total_seconds = Math.floor(Math.abs((distance % (minute)) / second));
+                var f = this.fields;
+                if ( f.indexOf('y') >= 0 ) {
+                    var total_years = Math.floor(Math.abs(distance / (year)));
+                }
+                else year = 1;
+                if ( f.indexOf('d') >= 0 ) {
+                    var total_days = Math.floor(Math.abs((distance % (year)) / (day)));
+                }
+                else day = 1;
+                if ( f.indexOf('h') >= 0 ) {
+                    var total_hours = Math.floor(Math.abs((distance % (day)) / (hour)));
+                }
+                else hour = 1;
+                if ( f.indexOf('m') >= 0 ) {
+                    var total_minutes = Math.floor(Math.abs((distance % (hour)) / (minute)));
+                }
+                else minute = 1;
+                if ( f.indexOf('s') >= 0 ) {
+                    var total_seconds = Math.floor(Math.abs((distance % (minute)) / second));
+                }
 
                 if ( document.getElementById('years') !== null ) {
                     document.getElementById('years').innerHTML = total_days;
