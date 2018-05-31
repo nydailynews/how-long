@@ -74,34 +74,34 @@ var counts = {
             }
 
             if ( document.getElementById('years') !== null ) {
-                document.getElementById('years').innerHTML = total_days;
-                document.getElementById('years-label').innerHTML = total_days == 1
-                    ? "year" : "years";
+                document.getElementById('years').textContent = total_days;
+                document.getElementById('years-label').textContent = total_days == 1
+                    ? "year" : document.getElementById('years-label').textContent;
             }
             if ( document.getElementById('months') !== null ) {
-                document.getElementById('months').innerHTML = total_months;
-                document.getElementById('months-label').innerHTML = total_months == 1
-                    ? "month" : "months";
+                document.getElementById('months').textContent = total_months;
+                document.getElementById('months-label').textContent = total_months == 1
+                    ? "month" : document.getElementById('months-label').textContent;
             }
             if ( document.getElementById('days') !== null ) {
-                document.getElementById('days').innerHTML = total_days;
-                document.getElementById('days-label').innerHTML = total_days == 1
-                    ? "day" : "days";
+                document.getElementById('days').textContent = total_days;
+                document.getElementById('days-label').textContent = total_days == 1
+                    ? "day" : document.getElementById('days-label').textContent;
             }
             if ( document.getElementById('hours') !== null ) {
-                document.getElementById('hours').innerHTML = total_hours;
-                document.getElementById('hours-label').innerHTML = total_hours == 1
-                    ? "hour" : "hours";
+                document.getElementById('hours').textContent = total_hours;
+                document.getElementById('hours-label').textContent = total_hours == 1
+                    ? "hour" : document.getElementById('hours-label').textContent;
             }
             if ( document.getElementById('minutes') !== null ) {
-                document.getElementById('minutes').innerHTML = total_minutes
-                document.getElementById('minutes-label').innerHTML = total_minutes == 1
-                    ? "minute" : "minutes";
+                document.getElementById('minutes').textContent = total_minutes
+                document.getElementById('minutes-label').textContent = total_minutes == 1
+                    ? "minute" : document.getElementById('minutes-label').textContent;
             }
             if ( document.getElementById('seconds') !== null ) {
-                document.getElementById('seconds').innerHTML = total_seconds
-                document.getElementById('seconds-label').innerHTML = total_seconds == 1
-                    ? "second" : "seconds";
+                document.getElementById('seconds').textContent = total_seconds
+                document.getElementById('seconds-label').textContent = total_seconds == 1
+                    ? "second" : document.getElementById('seconds-label').textContent;
             }
             //console.log(distance, total_years, total_days, day, total_hours, hour, total_minutes, minute, total_seconds);
         }
