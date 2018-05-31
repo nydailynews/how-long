@@ -46,7 +46,6 @@ var counts = {
             document.getElementById('seconds').innerHTML = 0;
         }
         else {
-            // *** TODO: If we're not publishing one of these fields we shouldn't be tabulating it either.
             var f = obj.fields;
             var total_years = 0, total_months = 0, total_days = 0, total_hours = 0, total_minutes = 0, total_seconds = 0;
             var preceding_time = 0;
@@ -79,6 +78,11 @@ var counts = {
                 document.getElementById('years-label').innerHTML = total_days == 1
                     ? "year" : "years";
             }
+            if ( document.getElementById('months') !== null ) {
+                document.getElementById('months').innerHTML = total_months;
+                document.getElementById('months-label').innerHTML = total_months == 1
+                    ? "month" : "months";
+            }
             if ( document.getElementById('days') !== null ) {
                 document.getElementById('days').innerHTML = total_days;
                 document.getElementById('days-label').innerHTML = total_days == 1
@@ -99,7 +103,7 @@ var counts = {
                 document.getElementById('seconds-label').innerHTML = total_seconds == 1
                     ? "second" : "seconds";
             }
-            console.log(distance, total_years, total_days, day, total_hours, hour, total_minutes, minute, total_seconds);
+            //console.log(distance, total_years, total_days, day, total_hours, hour, total_minutes, minute, total_seconds);
         }
     },
     init: function(target_time) {
