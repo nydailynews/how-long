@@ -1,4 +1,4 @@
-var second = 1000,
+const second = 1000,
     minute = second * 60,
     hour = minute * 60,
     day = hour * 24,
@@ -48,24 +48,21 @@ var counts = {
         else {
             // *** TODO: If we're not publishing one of these fields we shouldn't be tabulating it either.
             var f = obj.fields;
+            var total_years = 0, total_days = 0, total_hours = 0, total_minutes = 0, total_seconds = 0;
             if ( f.indexOf('y') >= 0 ) {
-                var total_years = Math.floor(Math.abs(distance / (year)));
+                var total_years = Math.floor(distance / year);
             }
-            else year = 1;
             if ( f.indexOf('d') >= 0 ) {
-                var total_days = Math.floor(Math.abs((distance % (year)) / (day)));
+                var total_days = Math.floor((distance - (total_years * year)) / day);
             }
-            else day = 1;
             if ( f.indexOf('h') >= 0 ) {
-                var total_hours = Math.floor(Math.abs((distance % (day)) / (hour)));
+                var total_hours = Math.floor((distance % (day)) / (hour));
             }
-            else hour = 1;
             if ( f.indexOf('m') >= 0 ) {
-                var total_minutes = Math.floor(Math.abs((distance % (hour)) / (minute)));
+                var total_minutes = Math.floor((distance % (hour)) / (minute));
             }
-            else minute = 1;
             if ( f.indexOf('s') >= 0 ) {
-                var total_seconds = Math.floor(Math.abs((distance % (minute)) / second));
+                var total_seconds = Math.floor((distance % (minute)) / second);
             }
 
             if ( document.getElementById('years') !== null ) {
@@ -93,6 +90,7 @@ var counts = {
                 document.getElementById('seconds-label').innerHTML = total_seconds == 1
                     ? "second" : "seconds";
             }
+            console.log(distance, total_years, total_days, day, total_hours, hour, total_minutes, minute, total_seconds);
         }
     },
     init: function(target_time) {
