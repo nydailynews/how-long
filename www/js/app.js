@@ -39,7 +39,7 @@ var counts = {
         // other behavior is configured via adding / removing elements with particular IDs on them.
         // Should probably document which is which. ***
         if ( document.getElementById('y') !== null ) this.fields.push('y');
-        if ( document.getElementById('mo') !== null && document.getElementById('month-anniversary') == null ) this.fields.push('mo');
+        if ( document.getElementById('moa') !== null && document.getElementById('month-anniversary') == null ) this.fields.push('moa');
         if ( document.getElementById('d') !== null ) this.fields.push('d');
         if ( document.getElementById('h') !== null ) this.fields.push('h');
         if ( document.getElementById('m') !== null ) this.fields.push('m');
