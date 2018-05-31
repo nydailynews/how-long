@@ -98,6 +98,11 @@ article p a:hover, article li a:hover {
 	font-size: 4.5rem;
 }
 
+.medium-number {
+	display: block;
+	font-size: 3rem;
+}
+
 article mark {
     background-color: transparent;
     font-style: normal;
