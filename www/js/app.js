@@ -3,7 +3,7 @@ const second = 1000,
     hour = minute * 60,
     day = hour * 24,
     year = day * 365,
-    month = year / 12;
+    month = Math.floor(year / 12);
 
 var counts = {
     target_time: null,
@@ -48,21 +48,30 @@ var counts = {
         else {
             // *** TODO: If we're not publishing one of these fields we shouldn't be tabulating it either.
             var f = obj.fields;
-            var total_years = 0, total_days = 0, total_hours = 0, total_minutes = 0, total_seconds = 0;
+            var total_years = 0, total_months = 0, total_days = 0, total_hours = 0, total_minutes = 0, total_seconds = 0;
+            var preceding_time = 0;
             if ( f.indexOf('y') >= 0 ) {
                 var total_years = Math.floor(distance / year);
+                preceding_time += total_years * year;
+            }
+            if ( f.indexOf('mo') >= 0 ) {
+                var total_months = Math.floor((distance - preceding_time)/ month);
+                preceding_time += total_months * month;
             }
             if ( f.indexOf('d') >= 0 ) {
-                var total_days = Math.floor((distance - (total_years * year)) / day);
+                var total_days = Math.floor((distance - preceding_time)/ day);
+                preceding_time += total_days * day;
             }
             if ( f.indexOf('h') >= 0 ) {
-                var total_hours = Math.floor((distance % (day)) / (hour));
+                var total_hours = Math.floor((distance - preceding_time)/ hour);
+                preceding_time += total_hours * hour;
             }
             if ( f.indexOf('m') >= 0 ) {
-                var total_minutes = Math.floor((distance % (hour)) / (minute));
+                var total_minutes = Math.floor((distance - preceding_time)/ minute);
+                preceding_time += total_minutes * minute;
             }
             if ( f.indexOf('s') >= 0 ) {
-                var total_seconds = Math.floor((distance % (minute)) / second);
+                var total_seconds = Math.floor((distance - preceding_time)/ second);
             }
 
             if ( document.getElementById('years') !== null ) {
