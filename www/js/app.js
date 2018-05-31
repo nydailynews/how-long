@@ -136,6 +136,7 @@ var counts = {
                 if ( months <= 10 ) month_str = utils.ap_numerals[months];
                 document.getElementById('month-anniversary').textContent = month_str + " months";
                 if ( document.getElementById('y') !== null ) document.getElementById('y').parentNode.removeChild(document.getElementById('y'));
+                if ( document.getElementById('mo') !== null ) document.getElementById('mo').parentNode.removeChild(document.getElementById('mo'));
                 if ( document.getElementById('d') !== null ) document.getElementById('d').parentNode.removeChild(document.getElementById('d'));
                 if ( document.getElementById('h') !== null ) document.getElementById('h').parentNode.removeChild(document.getElementById('h'));
                 if ( document.getElementById('m') !== null ) document.getElementById('m').parentNode.removeChild(document.getElementById('m'));
