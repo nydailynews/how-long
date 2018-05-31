@@ -93,12 +93,12 @@ article p a:hover, article li a:hover {
 	font-size: 4.5rem;
 }*/
 
-article li span.bigNumber {
+.bigNumber {
 	display: block;
 	font-size: 4.5rem;
 }
 
-mark {
+article mark {
     background-color: transparent;
     font-style: normal;
     font-weight: normal;
