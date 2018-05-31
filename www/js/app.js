@@ -1,4 +1,4 @@
-const second = 1000,
+var second = 1000,
     minute = second * 60,
     hour = minute * 60,
     day = hour * 24,
@@ -29,6 +29,72 @@ var counts = {
         // On the exactly-one-month anniversaries, change the display.
         
     },
+    on_interval: function(obj) {
+        // The function that updates the counter on the interval set in init()
+        let now = new Date().getTime();
+        // Count down
+        var distance = obj.target_time - now;
+        // Count up
+        if ( obj.config.direction === 1 ) distance = now - obj.target_time;
+
+        // *** Figure out if we're counting down to something and that thing has already happened.
+        if ( obj.config.direction === 0 && distance < 0 ) {
+            // We're finished counting.
+            document.getElementById('days').innerHTML = 0;
+            document.getElementById('hours').innerHTML = 0;
+            document.getElementById('minutes').innerHTML = 0;
+            document.getElementById('seconds').innerHTML = 0;
+        }
+        else {
+            // *** TODO: If we're not publishing one of these fields we shouldn't be tabulating it either.
+            var f = obj.fields;
+            if ( f.indexOf('y') >= 0 ) {
+                var total_years = Math.floor(Math.abs(distance / (year)));
+            }
+            else year = 1;
+            if ( f.indexOf('d') >= 0 ) {
+                var total_days = Math.floor(Math.abs((distance % (year)) / (day)));
+            }
+            else day = 1;
+            if ( f.indexOf('h') >= 0 ) {
+                var total_hours = Math.floor(Math.abs((distance % (day)) / (hour)));
+            }
+            else hour = 1;
+            if ( f.indexOf('m') >= 0 ) {
+                var total_minutes = Math.floor(Math.abs((distance % (hour)) / (minute)));
+            }
+            else minute = 1;
+            if ( f.indexOf('s') >= 0 ) {
+                var total_seconds = Math.floor(Math.abs((distance % (minute)) / second));
+            }
+
+            if ( document.getElementById('years') !== null ) {
+                document.getElementById('years').innerHTML = total_days;
+                document.getElementById('years-label').innerHTML = total_days == 1
+                    ? "year" : "years";
+            }
+            if ( document.getElementById('days') !== null ) {
+                document.getElementById('days').innerHTML = total_days;
+                document.getElementById('days-label').innerHTML = total_days == 1
+                    ? "day" : "days";
+            }
+            if ( document.getElementById('hours') !== null ) {
+                document.getElementById('hours').innerHTML = total_hours;
+                document.getElementById('hours-label').innerHTML = total_hours == 1
+                    ? "hour" : "hours";
+            }
+            if ( document.getElementById('minutes') !== null ) {
+                document.getElementById('minutes').innerHTML = total_minutes
+                document.getElementById('minutes-label').innerHTML = total_minutes == 1
+                    ? "minute" : "minutes";
+            }
+            if ( document.getElementById('seconds') !== null ) {
+                document.getElementById('seconds').innerHTML = total_seconds
+                document.getElementById('seconds-label').innerHTML = total_seconds == 1
+                    ? "second" : "seconds";
+            }
+        }
+    },
     init: function(target_time) {
         // Config handling. External config objects must be named c_config
         if ( typeof c_config !== 'undefined' ) this.update_config(c_config);
@@ -40,6 +106,7 @@ var counts = {
         // Should probably document which is which. ***
         if ( document.getElementById('y') !== null ) this.fields.push('y');
         if ( document.getElementById('moa') !== null && document.getElementById('month-anniversary') == null ) this.fields.push('moa');
+        if ( document.getElementById('mo') !== null ) this.fields.push('mo');
         if ( document.getElementById('d') !== null ) this.fields.push('d');
         if ( document.getElementById('h') !== null ) this.fields.push('h');
         if ( document.getElementById('m') !== null ) this.fields.push('m');
@@ -69,73 +136,7 @@ var counts = {
         }
 
         // THIS IS WHERE THE ACTION IS
-        let x = setInterval (function() {
-
-            let now = new Date().getTime();
-            // Count down
-            var distance = counts.target_time - now;
-            // Count up
-            if ( counts.config.direction === 1 ) distance = now - counts.target_time;
-
-            // *** Figure out if we're counting down to something and that thing has already happened.
-            if ( counts.config.direction === 0 && distance < 0 ) {
-                // We're finished counting.
-                document.getElementById('days').innerHTML = 0;
-                document.getElementById('hours').innerHTML = 0;
-                document.getElementById('minutes').innerHTML = 0;
-                document.getElementById('seconds').innerHTML = 0;
-            }
-            else {
-                // *** TODO: If we're not publishing one of these fields we shouldn't be tabulating it either.
-                var f = this.fields;
-                if ( f.indexOf('y') >= 0 ) {
-                    var total_years = Math.floor(Math.abs(distance / (year)));
-                }
-                else year = 1;
-                if ( f.indexOf('d') >= 0 ) {
-                    var total_days = Math.floor(Math.abs((distance % (year)) / (day)));
-                }
-                else day = 1;
-                if ( f.indexOf('h') >= 0 ) {
-                    var total_hours = Math.floor(Math.abs((distance % (day)) / (hour)));
-                }
-                else hour = 1;
-                if ( f.indexOf('m') >= 0 ) {
-                    var total_minutes = Math.floor(Math.abs((distance % (hour)) / (minute)));
-                }
-                else minute = 1;
-                if ( f.indexOf('s') >= 0 ) {
-                    var total_seconds = Math.floor(Math.abs((distance % (minute)) / second));
-                }
-
-                if ( document.getElementById('years') !== null ) {
-                    document.getElementById('years').innerHTML = total_days;
-                    document.getElementById('years-label').innerHTML = total_days == 1
-                        ? "year" : "years";
-                }
-                if ( document.getElementById('days') !== null ) {
-                    document.getElementById('days').innerHTML = total_days;
-                    document.getElementById('days-label').innerHTML = total_days == 1
-                        ? "day" : "days";
-                }
-                if ( document.getElementById('hours') !== null ) {
-                    document.getElementById('hours').innerHTML = total_hours;
-                    document.getElementById('hours-label').innerHTML = total_hours == 1
-                        ? "hour" : "hours";
-                }
-                if ( document.getElementById('minutes') !== null ) {
-                    document.getElementById('minutes').innerHTML = total_minutes
-                    document.getElementById('minutes-label').innerHTML = total_minutes == 1
-                        ? "minute" : "minutes";
-                }
-                if ( document.getElementById('seconds') !== null ) {
-                    document.getElementById('seconds').innerHTML = total_seconds
-                    document.getElementById('seconds-label').innerHTML = total_seconds == 1
-                        ? "second" : "seconds";
-                }
-            }
-
-        }, second);
+        this.x = setInterval(this.on_interval, second, this);
     }
 };
 
