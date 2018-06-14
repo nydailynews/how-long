@@ -37,7 +37,7 @@ var counts = {
         // Count up
         if ( obj.config.direction === 1 ) distance = now - obj.target_time;
 
-        // *** Figure out if we're counting down to something and that thing has already happened.
+        // Figure out if we're counting down to something and that thing has already happened.
         if ( obj.config.direction === 0 && distance < 0 ) {
             // We're finished counting.
             document.getElementById('days').innerHTML = 0;
@@ -73,6 +73,8 @@ var counts = {
                 var total_seconds = Math.floor((distance - preceding_time)/ second);
             }
 
+            // PLURALIZER / SINGLE-IZER
+            // *** Make it so the hours and seconds and minutes can switch from single back to plural.
             if ( document.getElementById('years') !== null ) {
                 document.getElementById('years').textContent = total_days;
                 document.getElementById('years-label').textContent = total_days == 1
