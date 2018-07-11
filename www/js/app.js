@@ -34,6 +34,7 @@ var counts = {
         let now = new Date().getTime();
         // Count down
         var distance = obj.target_time - now;
+        
         // Count up
         if ( obj.config.direction === 1 ) distance = now - obj.target_time;
 
@@ -74,8 +75,8 @@ var counts = {
             }
 
             if ( document.getElementById('years') !== null ) {
-                document.getElementById('years').textContent = total_days;
-                document.getElementById('years-label').textContent = total_days == 1
+                document.getElementById('years').textContent = total_years;
+                document.getElementById('years-label').textContent = total_years == 1
                     ? "year" : document.getElementById('years-label').textContent;
             }
             if ( document.getElementById('months') !== null ) {
