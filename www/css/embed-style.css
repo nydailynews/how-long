@@ -83,6 +83,11 @@ article p a:hover, article li a:hover {
 	font-size: 3rem;
     text-align: center;
 }
+.side-number {
+    display: inline;
+}
+.side-number ~ mark {
+}
 
 article mark {
     background-color: transparent;
