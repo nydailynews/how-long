@@ -94,16 +94,6 @@ var counts = {
                 document.getElementById('hours-label').textContent = total_hours == 1
                     ? "hour" : document.getElementById('hours-label').textContent;
             }
-            if ( document.getElementById('minutes') !== null ) {
-                document.getElementById('minutes').textContent = total_minutes
-                document.getElementById('minutes-label').textContent = total_minutes == 1
-                    ? "minute" : document.getElementById('minutes-label').textContent;
-            }
-            if ( document.getElementById('seconds') !== null ) {
-                document.getElementById('seconds').textContent = total_seconds
-                document.getElementById('seconds-label').textContent = total_seconds == 1
-                    ? "second" : document.getElementById('seconds-label').textContent;
-            }
             //console.log(distance, total_years, total_days, day, total_hours, hour, total_minutes, minute, total_seconds);
         }
     },
