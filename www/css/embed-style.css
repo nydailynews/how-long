@@ -64,8 +64,7 @@ article li {
 	font: bold 25px 'Open Sans Condensed', serif;
 	display: inline-block;
 	list-style-type: none;
-	padding-left: 1em;
-	padding-right: 1em;
+	padding: 0 .5em;
 	text-transform: uppercase;
 }
 
@@ -76,17 +75,19 @@ article p a:hover, article li a:hover {
 .big-number {
 	display: block;
 	font-size: 4.5rem;
+    text-align: center;
 }
 
 .medium-number {
 	display: block;
 	font-size: 3rem;
+    text-align: center;
 }
 
 article mark {
     background-color: transparent;
     font-style: normal;
-    font-weight: normal;
+    color: #999;
 }
 
 .center {
@@ -105,19 +106,6 @@ article mark {
 @media only screen and (max-width: 1024px) {
 	.container, .counter {
 		padding: 50px 0 0 0;
-	}
-    .counter ul {
-        padding: 0 100px;
-    }
-	article p, article h3 {
-		width: 95%;
-	}
-	p.latest-news {
-		line-height: 25px;
-	}
-	.container li {
-		padding-left: 0;
-		padding-right: 0;
 	}
 }
 @media only screen and (max-width: 375px) {
