@@ -1,0 +1,130 @@
+article ul, article li, article h1, .dek {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.counter {
+	background: #800000;
+	background: linear-gradient(358deg, #000, #800000);
+	width: 100%;
+	padding: 50px;
+	text-align: center;
+}
+
+#counter li {
+	color: #333;
+}
+
+main article a:hover {
+	color: #333;
+}
+
+article h1 {
+	font: bold 60px/60px 'Open Sans Condensed', sans-serif;
+	text-transform: uppercase;
+	color: #333;
+}
+
+article h2, article .dek {
+	color: #333;
+	position: relative;
+	font: bold 30px 'Open Sans Condensed', serif;
+	z-index: 1;
+	overflow: hidden;
+	text-align: center;
+	text-transform: uppercase;
+	margin: auto;
+}
+
+article h2:before, article h2:after, article .dek:before, article .dek:after {
+	content: '';
+	width: 40px;
+	height: 3px;
+	display:inline-block;
+	background-color: #666;
+	vertical-align: 0.3em;
+	margin: auto;
+}
+
+article h2:before, article .dek:before {
+	margin-right: 0.75em;
+}
+
+article h2:after, article .dek:after {
+	margin-left: 0.75em;
+}
+
+article ul {
+	margin: 15px auto;
+}
+
+article li {
+	color: #333;
+	font: bold 25px 'Open Sans Condensed', serif;
+	display: inline-block;
+	list-style-type: none;
+	padding-left: 1em;
+	padding-right: 1em;
+	text-transform: uppercase;
+}
+
+article p a:hover, article li a:hover {
+	color: #333;
+}
+
+.big-number {
+	display: block;
+	font-size: 4.5rem;
+}
+
+.medium-number {
+	display: block;
+	font-size: 3rem;
+}
+
+article mark {
+    background-color: transparent;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.center {
+	margin: auto;
+	text-align: center;
+}
+
+/* HANDHELD */
+@media only screen and (min-width: 220px) and (max-width: 727px) and (orientation: portrait) {
+}
+@media only screen and (min-width: 220px) and (max-width: 360px) and (orientation: portrait) {
+}
+@media only screen and (min-width: 220px) and (max-width: 727px) and (orientation: landscape),
+(min-width: 728px) and (max-width: 989px) and (orientation: portrait) {
+}
+@media only screen and (max-width: 1024px) {
+	.container, .counter {
+		padding: 50px 0 0 0;
+	}
+    .counter ul {
+        padding: 0 100px;
+    }
+	article p, article h3 {
+		width: 95%;
+	}
+	p.latest-news {
+		line-height: 25px;
+	}
+	.container li {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+@media only screen and (max-width: 375px) {
+}
+@media only screen and (max-width: 325px) {
+}
+@media only screen and (min-width: 728px) and (max-width: 1025px) and (orientation: landscape) {
+}
+@media only screen and (min-width: 1500px) {
+}
