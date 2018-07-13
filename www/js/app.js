@@ -34,6 +34,7 @@ var counts = {
         let now = new Date().getTime();
         // Count down
         var distance = obj.target_time - now;
+        
         // Count up
         if ( obj.config.direction === 1 ) distance = now - obj.target_time;
 
@@ -76,8 +77,8 @@ var counts = {
             // PLURALIZER / SINGLE-IZER
             // *** Make it so the hours and seconds and minutes can switch from single back to plural.
             if ( document.getElementById('years') !== null ) {
-                document.getElementById('years').textContent = total_days;
-                document.getElementById('years-label').textContent = total_days == 1
+                document.getElementById('years').textContent = total_years;
+                document.getElementById('years-label').textContent = total_years == 1
                     ? "year" : document.getElementById('years-label').textContent;
             }
             if ( document.getElementById('months') !== null ) {
@@ -94,16 +95,6 @@ var counts = {
                 document.getElementById('hours').textContent = total_hours;
                 document.getElementById('hours-label').textContent = total_hours == 1
                     ? "hour" : document.getElementById('hours-label').textContent;
-            }
-            if ( document.getElementById('minutes') !== null ) {
-                document.getElementById('minutes').textContent = total_minutes
-                document.getElementById('minutes-label').textContent = total_minutes == 1
-                    ? "minute" : document.getElementById('minutes-label').textContent;
-            }
-            if ( document.getElementById('seconds') !== null ) {
-                document.getElementById('seconds').textContent = total_seconds
-                document.getElementById('seconds-label').textContent = total_seconds == 1
-                    ? "second" : document.getElementById('seconds-label').textContent;
             }
             //console.log(distance, total_years, total_days, day, total_hours, hour, total_minutes, minute, total_seconds);
         }
