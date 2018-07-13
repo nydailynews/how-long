@@ -16,6 +16,11 @@ article.embed ul, article.embed li, article.embed h1, .dek {
 	color: #333;
 }
 
+article.embed {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
 main article.embed a:hover {
 	color: #333;
 }
@@ -28,6 +33,7 @@ article.embed h1, article.embed h2, article.embed h3, article.embed h4 {
 article.embed h3 {
     font-size: 40px;
     line-height: 33px;
+    margin: 0;
 }
 
 article.embed .dek {
@@ -118,6 +124,10 @@ article.embed mark {
 	}
 }
 @media only screen and (max-width: 375px) {
+    article.embed h3 {
+        font-size: 36px;
+        line-height: 29px;
+    }
 }
 @media only screen and (max-width: 325px) {
 }
