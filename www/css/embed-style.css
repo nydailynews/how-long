@@ -1,4 +1,4 @@
-article ul, article li, article h1, .dek {
+article.embed ul, article.embed li, article.embed h1, .dek {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -16,17 +16,21 @@ article ul, article li, article h1, .dek {
 	color: #333;
 }
 
-main article a:hover {
+main article.embed a:hover {
 	color: #333;
 }
 
-article h1 {
-	font: bold 60px/60px 'Open Sans Condensed', sans-serif;
+article.embed h1, article.embed h2, article.embed h3, article.embed h4 {
+	font: bold 60px/50px 'Open Sans Condensed', sans-serif;
 	text-transform: uppercase;
 	color: #333;
 }
+article.embed h3 {
+    font-size: 40px;
+    line-height: 33px;
+}
 
-article h2, article .dek {
+article.embed .dek {
 	color: #333;
 	position: relative;
 	font: bold 30px 'Open Sans Condensed', serif;
@@ -37,7 +41,7 @@ article h2, article .dek {
 	margin: auto;
 }
 
-article h2:before, article h2:after, article .dek:before, article .dek:after {
+article.embed .dek:before, article.embed .dek:after {
 	content: '';
 	width: 40px;
 	height: 3px;
@@ -47,28 +51,28 @@ article h2:before, article h2:after, article .dek:before, article .dek:after {
 	margin: auto;
 }
 
-article h2:before, article .dek:before {
+article.embed .dek:before {
 	margin-right: 0.75em;
 }
 
-article h2:after, article .dek:after {
+article.embed .dek:after {
 	margin-left: 0.75em;
 }
 
-article ul {
+article.embed ul {
 	margin: 15px auto;
 }
 
-article li {
+article.embed li {
 	color: #333;
-	font: bold 25px 'Open Sans Condensed', serif;
+	font: bold 25px/30px 'Open Sans Condensed', serif;
 	display: inline-block;
 	list-style-type: none;
 	padding: 0 .5em;
 	text-transform: uppercase;
 }
 
-article p a:hover, article li a:hover {
+article.embed p a:hover, article.embed li a:hover {
 	color: #333;
 }
 
@@ -89,7 +93,7 @@ article p a:hover, article li a:hover {
 .side-number ~ mark {
 }
 
-article mark {
+article.embed mark {
     background-color: transparent;
     font-style: normal;
     color: #999;
