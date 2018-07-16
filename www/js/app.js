@@ -96,6 +96,12 @@ var counts = {
                 document.getElementById('hours-label').textContent = total_hours == 1
                     ? "hour" : document.getElementById('hours-label').textContent;
             }
+            if ( document.getElementById('minutes') !== null ) {
+                document.getElementById('minutes').textContent = total_minutes
+            }
+            if ( document.getElementById('seconds') !== null ) {
+                document.getElementById('seconds').textContent = total_seconds
+            }
             //console.log(distance, total_years, total_days, day, total_hours, hour, total_minutes, minute, total_seconds);
         }
     },
